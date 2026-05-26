@@ -1,4 +1,4 @@
- # S7-SEIR Spatial: Temperature-Dependent Influenza Dynamics in a Metapopulation
+ # S7-SEIR Spatial: Temperature-Dependent Disease Dynamics in a Metapopulation
 
 > **Research question:** How does coupling temperature-dependent transmission with human mobility alter influenza dynamics in a SEIR framework?
 
@@ -12,8 +12,8 @@ Respiratory infections such as influenza exhibit strong seasonal patterns driven
 
 This project implements a spatial SEIR agent-based model (ABM) that couples two mechanisms simultaneously:
 
-- **Temperature-dependent transmission** — a logistic sigmoid maps daily mean temperature to a transmission scaling factor κ(T), capturing the increased transmissibility of influenza at lower temperatures
-- **Human mobility** — an origin–destination matrix Φ derived from the 2021 Portuguese Census routes external contacts across municipalities, allowing infection to spread spatially
+- **Temperature-dependent transmission** — a logistic sigmoid maps daily mean temperature to a transmission scaling factor $\kappa(T)$, capturing the increased transmissibility of influenza at lower temperatures
+- **Human mobility** — an origin–destination matrix $\theta$ derived from the 2021 Portuguese Census routes external contacts across municipalities, allowing infection to spread spatially
 
 Four scenarios are compared in a stochastic ensemble to isolate each mechanism's contribution to outbreak dynamics.
 
@@ -87,30 +87,30 @@ The daily infection risk for a susceptible agent in home patch *i* combines two 
 
 $$P(\text{core infection}) = 1 - (1 - \beta_{\text{core}})^{n_{\text{infected household members}}}$$
 
-**Community (external) risk** — contacts distributed across destination patches *j* according to the mobility matrix Φ; temperature-modulated in each destination:
+**Community (external) risk** — contacts distributed across destination patches *j* according to the mobility matrix $\theta$; temperature-modulated in each destination:
 
-$$P(\text{ext. escape}) = \prod_j \left(1 - \kappa(T_j) \cdot \beta_{\text{ext}} \cdot \pi_j \right)^{k_{ij}}$$
+$$P(\text{ext. context}) = \prod_j \left(1 - \kappa(T_j) \cdot \beta_{\text{ext}} \cdot \pi_j \right)^{k_{ij}}$$
 
-where $k_{ij} \sim \text{Poisson}(\bar{k}_{\text{ext}} \cdot \Phi_{ij})$ and $\pi_j$ is the effective infectious prevalence in patch *j* weighted by the inflow from all origins.
+where $k_{ij} \sim \text{Poisson}(k_{\text{ext}} \cdot \theta_{ij})$ and $\pi_j$ is the effective infectious prevalence in patch *j* weighted by the inflow from all origins.
 
 ### Temperature Coupling
 
-A logistic sigmoid maps daily mean temperature to a scaling factor κ ∈ [y_min, y_min + Δy]:
+A logistic sigmoid maps daily mean temperature to a scaling factor $\kappa \in [y_{\min}, y_{\min} + \Delta y]$:
 
 $$\kappa(T) = y_{\min} + \frac{\Delta y}{1 + e^{\,k_T (T - T_{\text{mid}})}}$$
 
-Cold conditions (T ≪ T_mid) push κ → 1 (maximum transmission); warm conditions suppress it toward y_min = 0.20. Parameters are set in `config.R` and documented there.
+Low temperature conditions $(T < T_{\text{mid}})$ push ${\kappa \rightarrow 1}$ (maximum transmission); Higher temperature conditions suppress it toward $y_{\min} = 0.20$. Parameters are set in `config.R` and documented there.
 
 ### Mobility Matrix
 
-Φ is derived from pendular (commuting) movement flows in the **2021 Portuguese Census**. It is row-normalised so that Φ[i, j] gives the proportion of time residents of patch *i* spend in patch *j*, with Σ_j Φ[i,j] = 1 for all i.
+Φ is derived from pendular (commuting) movement flows in the **2021 Portuguese Census**. It is row-normalised so that $\theta_{ij}$ gives the proportion of time residents of patch *i* spend in patch *j*, with $\sum_j \theta_{ij} = 1$ for all *i*.
 
 ### Disease Parameters (Influenza H3N2, 2017–18)
 
 | Parameter | Symbol | Value | Interpretation |
 |---|---|---|---|
-| Household transmission risk | β_core | 0.08 | Per infectious household contact |
-| Community transmission risk | β_ext | 0.024 | Per infectious external contact |
+| Household transmission risk | β_core | 0.15 | Per infectious household contact |
+| Community transmission risk | β_ext | 0.015 | Per infectious external contact |
 | Incubation rate | σ | 0.526 day⁻¹ | Mean incubation 1.9 days |
 | Recovery rate | γ | 0.244 day⁻¹ | Mean infectious period 4.1 days |
 | κ floor | y_min | 0.20 | Minimum scaling at high temperature |
