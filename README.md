@@ -33,7 +33,6 @@ Four scenarios are compared in a stochastic ensemble to isolate each mechanism's
 │   └── README_data.md       # Data sources and download instructions
 ├── results/                  # Created on first run — simulation outputs
 ├── figures/                  # Created on first run — figures and animations
-├── frames/                   # Created on first run — GIF frames for LaTeX animations
 ├── LICENSE
 └── README.md
 ```
