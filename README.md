@@ -173,7 +173,6 @@ The full analysis uses three external datasets. They are not included in the rep
 | `data/pop_info.rds` | [INE Census 2021](https://www.ine.pt/) | Municipality population sizes |
 | `data/healthcare_behaviour.rds` | [DGS / SNS](https://transparencia.sns.gov.pt/) | Respiratory emergency visits per health region |
 | `data/temp_per_ARS.rds` | [Copernicus E-OBS](https://cds.climate.copernicus.eu/) | Temperature aggregated to ARS level (for plots) |
-| `data/Continente_CAOP2024_1.gpkg` | [DGT CAOP 2024](https://www.dgterritorio.gov.pt/) | Administrative boundaries |
 | `data/ARS_Portugal_Continental_Estrutura.xlsx` | [SNS](https://www.sns.gov.pt/) | Municipality–ARS mapping |
 
 > **No data needed for the minimal example.** `example/minimal_example.R` is fully self-contained and uses synthetic temperature and mobility data.
