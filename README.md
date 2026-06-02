@@ -165,7 +165,7 @@ Key functions:
 
 ## Data
 
-The full analysis uses three external datasets. They are not included in the repository due to size and licensing. Place the processed files in `data/` before running `run_scenarios.R` or `plots.R`. Full instructions are in [`data/README_data.md`](data/README_data.md).
+The full analysis uses three external datasets. Their complete version are not included in the repository due to size. Place the processed files in `data/` before running `run_scenarios.R` or `plots.R`.
 
 | File | Source | Description |
 |---|---|---|
@@ -215,12 +215,12 @@ The exact results presented at BioInference 2026 can be reproduced by:
 
 1. Cloning this repository
 2. Installing R ≥ 4.3.0
-3. Placing the data files in `data/` (see [`data/README_data.md`](data/README_data.md))
+3. Placing the data files in `data/`
 4. Running, **in order**, from the repository root:
 
 ```r
-source("run_scenarios.R")   # ~30–60 min depending on hardware
-source("plots.R")           # ~10–15 min including GIF rendering
+source("run_scenarios.R")   
+source("plots.R")           
 ```
 
 Stochastic replicates use seeds `rep × 100` (100, 200, …, 1500), set before any random call including population initialisation. The `seed` column in every output data frame records which seed produced each replicate.
