@@ -173,6 +173,7 @@ The full analysis uses three external datasets. They are not included in the rep
 | `data/healthcare_behaviour.rds` | [DGS / SNS](https://transparencia.sns.gov.pt/) | Respiratory emergency visits per health region |
 | `data/temp_per_ARS.rds` | [Copernicus E-OBS](https://cds.climate.copernicus.eu/) | Temperature aggregated to ARS level (for plots) |
 | `data/ARS_Portugal_Continental_Estrutura.xlsx` | [SNS](https://www.sns.gov.pt/) | Municipality–ARS mapping |
+| `data/lvt_map_proj` | [CAOP](https://www.dgterritorio.gov.pt/atividades/cartografia/cartografia-tematica/caop) | Polygon Projection |
 
 > **No data needed for the minimal example.** `example/minimal_example.R` is fully self-contained and uses synthetic temperature and mobility data.
 
