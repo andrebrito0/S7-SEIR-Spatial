@@ -99,7 +99,7 @@ A logistic sigmoid maps daily mean temperature to a scaling factor $\kappa \in [
 
 $$\kappa(T) = y_{\min} + \frac{\Delta y}{1 + e^{\,k_T (T - T_{\text{mid}})}}$$
 
-Low temperature conditions $(T < T_{\text{mid}})$ push ${\kappa \rightarrow 1}$ (maximum transmission); Higher temperature conditions suppress it toward $y_{\min} = 0.20$. Parameters are set in `config.R` and documented there.
+Low temperature conditions $(T < T_{\text{mid}})$ push ${\kappa \rightarrow 1}$ (maximum transmission); Higher temperature conditions suppress it toward $y_{\min}$. Parameters are set in `config.R` and documented there.
 
 ### Mobility Matrix
 
@@ -206,9 +206,7 @@ The full analysis uses three external datasets. They are not included in the rep
 |---|---|
 | `figures/seasonal_plot.pdf` | 7-day moving average of respiratory emergency visits with temperature overlay |
 | `figures/od_flows_temporal.gif` | Animated daily commuting flows across LVT municipalities |
-| `figures/temp_coupling.gif` | Animated draw of the sigmoid κ(T) curve |
-| `frames/od/frame-N.png` | Individual frames extracted for LaTeX `\animategraphics` |
-| `frames/temp/frame-N.png` | Individual frames extracted for LaTeX `\animategraphics` |
+| `figures/temp_coupling.pdf` | Animated draw of the sigmoid κ(T) curve |
 
 ---
 
@@ -278,8 +276,7 @@ All packages are installed automatically by `config.R` if not already present. F
 If you use this software, please cite:
 
 ```
-Brito, A. (2026). S7-SEIR Spatial: Temperature-dependent influenza dynamics
-in a metapopulation [Software]. Presented at BioInference 2026.
+Brito, A. (2026). S7-SEIR Spatial: TCoupling Environmental Exposure and Mobility in Epidemiological Models [Software]. Presented at BioInference 2026.
 GitHub: https://github.com/andrebrito0/s7-seir-spatial
 ```
 
