@@ -27,10 +27,11 @@ Four scenarios are compared in a stochastic ensemble to isolate each mechanism's
 ├── S7_SEIR_spatial_core.R    # Core model: S7 class definitions, simulation engine, plotting
 ├── run_scenarios.R           # Four-scenario ensemble run — main analysis script
 ├── plots.R                   # Data visualisation: seasonal dynamics, mobility & temp animations
+├── model_results.R           # Analysis the results of simulation run
 ├── example/
-│   └── minimal_example.R    # Self-contained tutorial — no external data required
+│   └── minimal_example.R     # Self-contained tutorial — no external data required
 ├── data/
-│   └── README_data.md       # Data sources and download instructions
+│   └── README_data.md        # Data sources and download instructions
 ├── results/                  # Created on first run — simulation outputs
 ├── figures/                  # Created on first run — figures and animations
 ├── LICENSE
