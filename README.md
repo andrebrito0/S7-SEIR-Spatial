@@ -106,16 +106,18 @@ Low temperature conditions $(T < T_{\text{mid}})$ push ${\kappa \rightarrow 1}$ 
 
 ### Disease Parameters (Influenza H3N2, 2017–18)
 
-| Parameter | Symbol | Value | Interpretation |
-|---|---|---|---|
-| Household transmission risk | β_core | 0.15 | Per infectious household contact |
-| Community transmission risk | β_ext | 0.015 | Per infectious external contact |
-| Incubation rate | σ | 0.526 day⁻¹ | Mean incubation 1.9 days |
-| Recovery rate | γ | 0.244 day⁻¹ | Mean infectious period 4.1 days |
-| κ floor | y_min | 0.20 | Minimum scaling at high temperature |
-| κ range | Δy | 0.80 | Scaling range (max κ = 1.0) |
-| Sigmoid steepness | k_T | 0.30 | Positive → colder = higher κ |
-| Sigmoid inflection | T_mid | 10 °C | Temperature of half-maximal effect |
+| Parameter | Symbol | Baseline / Mobility | Temperature / Combined | Interpretation |
+|---|---|---|---|---|
+| Household transmission risk | β_core | 0.10 | 0.13 | Per infectious household contact |
+| Community transmission risk | β_ext | 0.021 | 0.033 | Per infectious external contact |
+| Incubation rate | σ | 0.526 day⁻¹ | 0.526 day⁻¹ | Mean incubation 1.9 days |
+| Recovery rate | γ | 0.244 day⁻¹ | 0.244 day⁻¹ | Mean infectious period 4.1 days |
+| κ floor | y_min | — | 0.40 | Minimum scaling at high temperature |
+| κ range | Δy | — | 0.60 | Scaling range (max κ = 1.0) |
+| Sigmoid steepness | k_T | — | 0.50 | Positive → colder = higher κ |
+| Sigmoid inflection | T_mid | — | 13 °C | Temperature of half-maximal effect |
+
+> β_core and β_ext are recalibrated upward for temperature-coupled scenarios because the sigmoid κ(T) suppresses mean transmissibility below 1 over the season; the higher base rates restore the target attack rate.
 
 ### Simulation Design
 
