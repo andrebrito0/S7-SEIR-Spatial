@@ -21,7 +21,7 @@
 #  Plot 3  — Final attack rate by scenario × patch (boxplot)
 #  Plot 4  — Peak timing by scenario × patch (boxplot)
 #  Plot 5  — Two-panel: epidemic curves + hospitalisation data
-#  Plot 6  — Three-panel: epidemic curves / hospitalisation /
+#  Plot 6  — Combined epidemic curves / hospitalisation /
 #             temperature, with calendar-dated x-axis
 #            (uncomment pdf() / dev.off() to export as PDF)
 #================================================================#
@@ -235,7 +235,7 @@ par(mfrow = c(1, 1))
 
 
 #================================================================#
-# § 7  PLOT 6 — THREE-PANEL PRESENTATION FIGURE
+# § 7  PLOT 6 — COMBINED EPIDEMIC CURVES PRESENTATION FIGURE
 #
 #  Layout: rows with heights 2 (epidemic curves) : 1 (hosp + temp)
 #  Calendar-dated x-axis on both panels.
@@ -245,7 +245,7 @@ par(mfrow = c(1, 1))
 #  Uncomment pdf() / dev.off() to export for the Beamer slides.
 #================================================================#
 
-# pdf(file.path(DIR_FIGURES, "three_panel_plot.pdf"),
+# pdf(file.path(DIR_FIGURES, "combined_curve_plot.pdf"),
 #     width = 13, height = 8, bg = "transparent")
 
 layout(matrix(1:2, nrow = 2), heights = c(2, 1))
