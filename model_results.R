@@ -26,6 +26,10 @@
 #            (uncomment pdf() / dev.off() to export as PDF)
 #================================================================#
 
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(reshape2)
 
 #----------------------------------------------------------------#
 # § 0  LOAD WORKSPACE
